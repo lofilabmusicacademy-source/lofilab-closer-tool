@@ -15,8 +15,13 @@ export async function POST(request) {
       messages: [
         {
           role: "user",
-          content: `Analiza esta conversación de WhatsApp de un setter de Lofi Lab (formación para productores musicales) con un prospecto. Genera un script personalizado para el closer.
+          content: `Analiza esta conversación de WhatsApp de un setter de Lofi Lab con un prospecto. Genera un script personalizado para el closer.
 
+CONVERSACION:
+${conversation.replace(/`/g, "'")}
+
+Responde SOLO con este JSON exacto, sin texto extra ni backticks:
+{"prospecto":{"nombre":"nombre","genero":"género musical","experiencia":"tiempo produciendo","situacion":"situación en 1 frase","objetivo":"monetizar/personal/ambos","motivacion":"motivación principal","objeciones":["objeción 1","objeción 2"],"urgencia":"alta/media/baja","tono":"tono de comunicación"},"puntos_clave":["punto 1","punto 2","punto 3"],"alertas":["alerta 1","alerta 2"],"script":{"rapport":"frase apertura","diagnostico":"pregunta diagnóstico","dolor":"pregunta frustración","vision":"pregunta objetivo ideal","objecion":"manejo objeción principal","cierre":"frase cierre personalizada"}}`,
 CONVERSACIÓN:
 ${conversation}
 
