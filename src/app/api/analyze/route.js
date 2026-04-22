@@ -54,7 +54,7 @@ export async function POST(request) {
 
     const message = await client.messages.create({
       model: "claude-haiku-4-5-20251001",
-      max_tokens: 2000,
+      max_tokens: 1024,
       system: `Eres experto en ventas de alto ticket para Lofi Lab. Analiza la conversación del setter y genera un script personalizado para el closer. Responde SOLO con JSON válido, sin backticks ni texto extra. Estructura exacta:
 {"prospecto":{"nombre":"string","genero":"string","experiencia":"string","situacion":"string en 1 frase","objetivo":"monetizar/personal/ambos","motivacion_principal":"string","objeciones_probables":["string","string"],"nivel_urgencia":"alta/media/baja","tono":"string"},"puntos_clave":["string x5"],"alertas":["string x2"],"script":{"rapport":"frase apertura personalizada","encuadre":"encuadre adaptado","diagnostico":"pregunta diagnóstico personalizada","dolor":"pregunta dolor personalizada","micro_cierre_dolor":"micro-cierre personalizado","vision":"pregunta visión personalizada","resumen_validacion":"resumen con sus palabras","manejo_objeciones":"manejo objeción principal","pitch_precio":"pitch precio adaptado","cierre_final":"frase cierre personalizada"}}`,
       messages: [
